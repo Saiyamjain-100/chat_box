@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="widhth=device-width, initial-scale=1">
+    <style>
+        .container{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .row{
+            align-items: center;
+            display: inline;
+            justify-content: center;
+        }
+        .heading{
+            text-decoration: underline;
+            text-align: center;
+        }
+        input[type=text]{
+            width: 100%;
+            padding: 12px 12px;
+            border: 1px black solid;
+            box-sizing: border-box;
+            margin: 10px 0px;
+            display: inline-block;
+        }
+        input[type=submit]{
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type=submit]:hover{
+            background-color: white;
+            color: #4caf50;
+            border: 1px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="heading">
+                &#12516 Chat bot &#12516
+            </h1>
+        </div>
+        <div class="row">
+            <form id="post-form" method="post" action="checkroom">
+                {% csrf_token %}
+                <label>Room name: </label>
+                <input type="text" name="room_name" id="room_name" width="100px"/>
+                <label>Username:</label>
+                <input type="text" name="user_name" id="user_name" width="100px"/>
+                <input type="submit" value="Enter Room">
+            </form>
+        </div>
+    </div>
+</body>
